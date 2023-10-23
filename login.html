@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <webpacker:css entry="login" />
+    <script th:inline="javascript">
+      window.TL = {
+        _BASE_URL: /*[[@{/}]]*/ "/",
+        emailConfigured: /*[[${emailConfigured}]]*/ false
+      };
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QIB Sequence Read Repository</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            width: 1000px;
+            height: 300px;
+            border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        .login-card-gutter {
+            width: 960px;
+            border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        .left-panel {
+            
+            background-image: url('https://i.ytimg.com/vi/WtFhTYjgwdQ/maxresdefault.jpg');
+            background-size: 140% 100%;
+            background-position: 30% center;
+            border: none;
+        }
+
+        .right-panel {
+            background-color: #ffffff;
+            padding: 60px 40px;
+            border: none;
+        }
+
+        .btn-login {
+            background-color: #24262c;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-login:hover {
+            background-color: #60b7b4;
+        }
+
+        .recovery-link {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .recovery-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="row no-gutters login-card-gutter">
+            <!-- Left Panel with Background Image -->
+            <div class="col-md-6 left-panel"></div>
+
+            <!-- Right Panel with Login Form -->
+            <div class="col-md-6 right-panel">
+                  <div class="alert alert-primary" role="alert" style="margin: 20px;">
+                       This is self-registered service for QIB users, you don't need to ask for access.
+                       Please use NBI credential to login.
+                  </div>
+                <div id="login-root"></div>
+    
+                <div class="text-center">
+                    <a href="https://quadram-institute.atlassian.net/servicedesk/customer/portals" class="recovery-link" target="_blank">Do you need help?</a>
+                </div>
+            </div>
+</div>
+<webpacker:js entry="login" />
+</body>
+
+</html>
